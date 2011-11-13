@@ -2,7 +2,7 @@ describe 'About Functions', ->
   it 'should declare functions', ->
     # In Coffeescript, the value of the last expression is the return value of the function
     add = (a, b) -> a + b
-    expect(add(1, 2)).toBe(FILL_ME_IN)
+    expect(add(1, 2)).toBe(3)
 
 
   it 'should know internal variables override outer variables', ->
@@ -10,9 +10,9 @@ describe 'About Functions', ->
     getMessage = -> message
     overrideMessage = -> message = 'Inner'
 
-    expect(getMessage()).toBe(FILL_ME_IN)
-    expect(overrideMessage()).toBe(FILL_ME_IN)
-    expect(message).toBe(FILL_ME_IN) # Side effect
+    expect(getMessage()).toBe('Outer')
+    expect(overrideMessage()).toBe('Inner')
+    expect(message).toBe('Inner') # Side effect
 
 
   it 'should have lexical scoping', ->
