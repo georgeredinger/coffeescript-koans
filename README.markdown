@@ -1,9 +1,21 @@
 # CoffeeScript Koans - koans to learn CoffeeScript #
-
-rvm use 1.9.2
-gem install guard
-gem install livereload
-install livereload browser plugin
+george's meditation {
+  rvm use 1.9.2
+  gem install guard
+  gem install guard-coffeescript
+  gem install livereload
+  install livereload browser plugin
+  
+  run Guard
+  in another terminal 
+  run livereload
+  
+  point a browser to the jasmine runner .html file for the koans
+  
+  push the "live reload button on the browser"
+  
+  enjoy making the koans pass the tests.
+}
 
 This work is based on Ben Hall's [Javascript Koans](https://github.com/BenHall/javascript-koans), 
 which in turn are based upon Edgecase's [Ruby koans](http://github.com/edgecase/ruby_koans). 
