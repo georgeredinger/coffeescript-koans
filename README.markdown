@@ -11,7 +11,7 @@ george's meditation {
 
   install livereload browser plugin
   
-  make small hack near line 127 of jasmine-html.js to only show failed tests (see repo)
+  make small hack near line 127 of coffeekoans-jasmine-html.js to only show failed tests (see repo)
   
   run Guard
 
