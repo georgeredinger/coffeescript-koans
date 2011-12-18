@@ -63,7 +63,7 @@ describe 'About Objects', ->
     expect(meglomaniac.secretary?).toBe(true)
 
     delete meglomaniac.henchman
-    expect(meglomaniac.henchman?).toBe(FILL_ME_IN)
+    expect(meglomaniac.henchman?).toBe(false)
 
 
   it 'should use prototype to add to all objects', ->
@@ -73,8 +73,8 @@ describe 'About Objects', ->
       colouredCircle = new Circle(5)
       colouredCircle.colour = 'red'
 
-      expect(simpleCircle.colour).toBe(FILL_ME_IN)
-      expect(colouredCircle.colour).toBe(FILL_ME_IN)
+      expect(simpleCircle.colour).toBe(undefined)
+      expect(colouredCircle.colour).toBe('red')
 
       Circle.prototype.describe = -> 'This circle has a radius of: ' + @radius
 

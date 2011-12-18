@@ -1,19 +1,27 @@
 # CoffeeScript Koans - koans to learn CoffeeScript #
 george's meditation {
+
   rvm use 1.9.2
+
   gem install guard
+
   gem install guard-coffeescript
+
   gem install livereload
+
   install livereload browser plugin
   
+  make small hack near line 127 of jasmine-html.js to only show failed tests (see repo)
+  
   run Guard
-  in another terminal 
-  run livereload
+
+  (in another terminal) run livereload
   
   point a browser to the jasmine runner .html file for the koans
   
   push the "live reload button on the browser"
   
+
   enjoy making the koans pass the tests.
 }
 
