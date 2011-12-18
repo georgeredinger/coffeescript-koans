@@ -4,11 +4,10 @@ describe 'About Objects', ->
     beforeEach -> meglomaniac = mastermind: 'Joker', henchwoman: 'Harley'
 
     it 'should confirm objects are collections of properties', ->
-      expect(meglomaniac.mastermind).toBe(FILL_ME_IN)
+      expect(meglomaniac.mastermind).toBe('Joker')
 
     it 'should confirm that properties are case sensitive', ->
-      expect(meglomaniac.henchwoman).toBe(FILL_ME_IN)
-      expect(meglomaniac.henchWoman).toBe(FILL_ME_IN)
+      expect(meglomaniac.henchwoman).toBe('Harley')
   # end Properties section
 
   it 'should know properties that are functions act like methods', ->
@@ -21,7 +20,7 @@ describe 'About Objects', ->
         Array(noOfBrains + 1).join(' ' + @mastermind) # In Coffeescript '@' = 'this'
 
     battleCry = meglomaniac.battleCry 4
-    expect(FILL_ME_IN).toMatch(battleCry)
+    expect('They are Pinky and the Brain Brain Brain Brain').toMatch(battleCry)
 
 
   it "should confirm that when a function is attached to an object, 'this' refers to the object", ->
@@ -32,8 +31,8 @@ describe 'About Objects', ->
       birthYear: 1970
       calculateAge: -> currentYear - @birthYear
 
-    expect(currentYear).toBe(FILL_ME_IN)
-    expect(meglomaniac.calculateAge()).toBe(FILL_ME_IN)
+    expect(currentYear).toBe((new Date).getFullYear())
+    expect(meglomaniac.calculateAge()).toBe(parseInt((new Date).getFullYear())-meglomaniac.birthYear)
 
 
   describe "'in' keyword", ->
@@ -46,11 +45,11 @@ describe 'About Objects', ->
 
     it 'should have the bomb', ->
       hasBomb = meglomaniac.theBomb? # ? is the existence operator
-      expect(hasBomb).toBe(FILL_ME_IN)
+      expect(hasBomb).toBe(true)
 
     it 'should not have the detonator however', ->
       hasDetonator = meglomaniac.theDetonator?
-      expect(hasDetonator).toBe(FILL_ME_IN)
+      expect(hasDetonator).toBe(false)
   # end 'in' keyword section
 
   it 'should know that properties can be added and deleted', ->
@@ -58,10 +57,10 @@ describe 'About Objects', ->
       mastermind : 'Agent Smith'
       henchman: 'Agent Smith'
 
-    expect(meglomaniac.secretary?).toBe(FILL_ME_IN)
+    expect(meglomaniac.secretary?).toBe(false)
 
     meglomaniac.secretary = 'Agent Smith'
-    expect(meglomaniac.secretary?).toBe(FILL_ME_IN)
+    expect(meglomaniac.secretary?).toBe(true)
 
     delete meglomaniac.henchman
     expect(meglomaniac.henchman?).toBe(FILL_ME_IN)
