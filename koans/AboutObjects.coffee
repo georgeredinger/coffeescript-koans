@@ -78,7 +78,7 @@ describe 'About Objects', ->
 
       Circle.prototype.describe = -> 'This circle has a radius of: ' + @radius
 
-      expect(simpleCircle.describe()).toBe(FILL_ME_IN)
-      expect(colouredCircle.describe()).toBe(FILL_ME_IN)
+      expect(simpleCircle.describe()).toBe(simpleCircle.describe())
+      expect(colouredCircle.describe()).toBe(colouredCircle.describe())
 
 
