@@ -13,10 +13,10 @@ describe 'About inheritance', ->
     @swedishChef = new SwedishChef 3, 'cooking', 'chillin'
 
   it 'should be able to call a method on the derived object', ->
-    (expect @swedishChef.cook()).toEqual(FILL_ME_IN)
+    (expect @swedishChef.cook()).toEqual('Mmmm soup!')
 
   it 'should be able to call a method on the base object', ->
-    (expect @swedishChef.answerNanny()).toEqual(FILL_ME_IN)
+    (expect @swedishChef.answerNanny()).toEqual("Everything's cool!")
 
   it 'should set constructor parameters on the base object', ->
     (expect @swedishChef.age).toEqual(FILL_ME_IN)
