@@ -19,21 +19,23 @@ describe 'About inheritance', ->
     (expect @swedishChef.answerNanny()).toEqual("Everything's cool!")
 
   it 'should set constructor parameters on the base object', ->
-    (expect @swedishChef.age).toEqual(FILL_ME_IN)
-    (expect @swedishChef.hobby).toEqual(FILL_ME_IN)
+    (expect @swedishChef.age).toEqual(3)
+    (expect @swedishChef.hobby).toEqual('cooking')
 
   it 'should set constructor parameters on the derived object', ->
-    (expect @swedishChef.mood).toEqual(FILL_ME_IN)
+    (expect @swedishChef.mood).toEqual('chillin')
 
   it 'should allow instances to override class methods', ->
     gonzo = new Muppet 3, 'daredevil performer'
     gonzo.answerNanny = -> 'Hehehe!'
-    (expect gonzo.answerNanny()).toBe(FILL_ME_IN)
-    (expect @muppet.answerNanny()).toBe(FILL_ME_IN)
+    gonzo.nonsenseNanny = -> 'non!'
+    (expect gonzo.answerNanny()).toBe('Hehehe!')
+    (expect gonzo.nonsenseNanny()).toBe('non!')
+    (expect @muppet.answerNanny()).toBe("Everything's cool!")
 
   it 'should allow derived classes to override base classes', ->
     class DanishChef extends SwedishChef
       cook: -> 'Sizzle'
     redzepi = new DanishChef 30, 'foraging', 'happy'
-    (expect redzepi.cook()).toBe(FILL_ME_IN)
-    (expect @swedishChef.cook()).toBe(FILL_ME_IN)
+    (expect redzepi.cook()).toBe('Sizzle')
+    (expect @swedishChef.cook()).toBe('Mmmm soup!')
