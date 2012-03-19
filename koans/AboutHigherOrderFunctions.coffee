@@ -5,14 +5,13 @@ describe 'About Higher Order Functions', ->
     tell = (num) -> if num > 0 then "#{num}, " else "Blastoff!"
     msg += tell i for i in numbers # 'for' gives an array comprehension
 
-    expect(msg).toEqual(FILL_ME_IN)
-    expect(numbers).toEqual(FILL_ME_IN)
+    expect(msg).toEqual('3, 2, 1, Blastoff!')
+    expect(numbers).toEqual([3,2,1,0])
 
 
   it "should use 'in' to test inclusion", ->
     numbers = [1..3]
-
-    expect(if 2 in numbers then true else false).toBe()
+    expect(if 2 in numbers then true else false).toBe(true)
 
 
   it 'should use a Javascript-style filter to return array items that meet a criteria', ->
